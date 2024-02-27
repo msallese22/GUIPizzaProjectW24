@@ -1,3 +1,4 @@
+using MatBlazor;
 using Project2.Components;
 
 namespace Project2
@@ -9,8 +10,10 @@ namespace Project2
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddRazorComponents()
+            builder.Services.
+                AddRazorComponents()
                 .AddInteractiveServerComponents();
+                
 
             WebApplication app = builder.Build();
 
@@ -31,6 +34,10 @@ namespace Project2
                 .AddInteractiveServerRenderMode();
 
             app.Run();
+        }
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddMatBlazor();
         }
     }
 }

@@ -1,5 +1,48 @@
 ﻿@page "/"
 
+
 <PageTitle>Home</PageTitle>
+<MatThemeProvider Theme="@theme1">
+    <div class="header">
+        <h1>PizzaHAL! Where WE love YOU!</h1>
+        <NavLink href="cart"><MatButton Raised="true" Type="button">View Cart</MatButton></NavLink>
+    </div>
+    <MatTabGroup>
+        <MatTab Label="Pizzas">
+            <div class="container">
+                <Pizzas />
+            </div>
+        </MatTab>
+        <MatTab Label="Vegetarian Pizzas">
+            <div class="container">
+                <VegetarianPizzas />
+            </div>
+        </MatTab>
+        <MatTab Label="Soups">
+            <div class="container">
+                <Soups />
+            </div>
+        </MatTab>
+        <MatTab Label="Sandwiches">
+            <div class="container">
+                <Sandwiches />
+            </div>
+        </MatTab>
+        <MatTab Label="Drinks">
+            <div class="container">
+                <Drinks />
+
+            </div>
+        </MatTab>
+        <MatTab Label="Desserts">
+            <div class="container">
+                <Desserts />
+            </div>
+        </MatTab>
+
+
+    </MatTabGroup>
+</MatThemeProvider>
+
 
 

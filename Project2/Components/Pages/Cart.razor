@@ -1,0 +1,32 @@
+﻿@page "/cart"
+@inject IJSRuntime JS
+<div class="cartainer">
+    <h3>Cart</h3>
+    <MatThemeProvider Theme="@theme1">
+        @foreach (var item in Models.Cart.Foods)
+        {
+            <p>@item.ToString()</p>
+        }
+        <p>Subtotal: $@CalculateGrandTotal().ToString("0.00")</p>
+        <MatRadioGroup @bind-Value="@PickUp" TValue="bool">
+            <MatRadioButton Value="@(true)" TValue="bool">
+                Pick Up
+            </MatRadioButton>
+            <MatRadioButton Value="@(false)" TValue="bool">
+                Delivery
+            </MatRadioButton>
+        </MatRadioGroup>
+        <p>Total with Tax: $@CalcTotalWithTax().ToString("0.00")</p>
+        <NavLink href=""><MatButton Raised="true" Type="button">Add More Items</MatButton></NavLink>
+        <MatButton Raised="true" Type="button" @onclick="CheckOut">Check Out</MatButton>
+    </MatThemeProvider>
+</div>
+
+@code {
+
+    async Task CheckOut()
+    {
+        await JS.InvokeVoidAsync("confirm", ["This one's free for you!"]);
+
+    }
+}

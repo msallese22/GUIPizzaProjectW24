@@ -1,0 +1,22 @@
+﻿<h3>Desserts</h3>
+<form @onsubmit="Form">
+    <MatSelect Label="Pick a Sweet Treat" @bind-Value="Dessert">
+        <MatOptionString Value="@Models.Desserts.Tiramisu">
+            @Models.Desserts.Tiramisu $@Models.Desserts.TiramisuPrice
+        </MatOptionString>
+        <MatOptionString Value="@Models.Desserts.ChocolateChipCookie">
+            @Models.Desserts.ChocolateChipCookie $@Models.Desserts.ChocolateChipCookiePrice
+        </MatOptionString>
+        <MatOptionString Value="@Models.Desserts.CookieBrownie">
+            @Models.Desserts.CookieBrownie $@Models.Desserts.CookieBrowniePrice
+        </MatOptionString>
+    </MatSelect>
+    <div>
+        <h6>Our totally human pastry chefs can definitely... bake!</h6>
+    </div>
+    <MatButton Raised="true" Type="submit" Disabled="DisableAddToCart()">Add To Cart</MatButton>
+</form>
+
+@code {
+
+}

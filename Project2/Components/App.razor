@@ -9,12 +9,22 @@
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="Project2.styles.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="_content/MatBlazor/dist/matBlazor.js"></script>
+    <link href="_content/MatBlazor/dist/matBlazor.css" rel="stylesheet" />
     <HeadOutlet @rendermode="InteractiveServer" />
 </head>
 
 <body>
     <Routes @rendermode="InteractiveServer" />
+    <MatThemeProvider Theme="@theme1"></MatThemeProvider>
     <script src="_framework/blazor.web.js"></script>
+    @code{
+        MatTheme theme1 = new MatTheme()
+        {
+            Primary = MatThemeColors.Green._900.Value,
+            Secondary = MatThemeColors.Red._900.Value
+        };
+    }
 </body>
 
 </html>

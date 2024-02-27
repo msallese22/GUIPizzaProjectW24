@@ -1,0 +1,39 @@
+﻿<h3>Vegetarian Pizzas</h3>
+<form @onsubmit="Form">
+    <div class="move-pizzas">
+        <div class="manual-length">
+            <MatSelect Label="Pick a Pizza Size" @bind-Value="VegetarianPizzaSize">
+                <MatOptionString Value="@Models.VegetarianPizzas.Small">
+                    Small $@Models.VegetarianPizzas.SmPrice Toppings: $@Models.VegetarianPizzas.SmToppings.ToString("0.00")
+                </MatOptionString>
+                <MatOptionString Value="@Models.VegetarianPizzas.Medium">
+                    Medium $@Models.VegetarianPizzas.MdPrice Toppings: $@Models.VegetarianPizzas.MdToppings.ToString("0.00")
+                </MatOptionString>
+                <MatOptionString Value="@Models.VegetarianPizzas.Large">
+                    Large $@Models.VegetarianPizzas.LgPrice Toppings: $@Models.VegetarianPizzas.LgToppings.ToString("0.00")
+                </MatOptionString>
+                <MatOptionString Value="@Models.VegetarianPizzas.XLarge">
+                    Extra Large $@Models.VegetarianPizzas.XlgPrice Toppings: $@Models.VegetarianPizzas.XlgToppings.ToString("0.00")
+                </MatOptionString>
+            </MatSelect>
+        </div>
+        <div>
+            <h6>Small: 10 inches, Medium: 12 inches, Large: 14 inches, Extra-Large: 16 inches</h6>
+            <h6>
+                If you'd like to add a topping, please click a box.
+                If you prefer a pizza with only our meatless cheese substitute, then don't click a box.
+            </h6>
+            <MatCheckbox @bind-Value="@Peppers" Label="Peppers"></MatCheckbox>
+            <MatCheckbox @bind-Value="@Pineapple" Label="Pineapple"></MatCheckbox>
+            <MatCheckbox @bind-Value="@Mushrooms" Label="Mushrooms"></MatCheckbox>
+        </div>
+    </div>
+    <p>Total Price: $@(VegTotalPrice.ToString("0.00"))</p>
+    <MatButton Raised="true" Type="button" Disabled="DisableCalcPrice()" @onclick="CalcPrice">
+        Calculate Pizza Total
+    </MatButton>
+    <MatButton Raised="true" Type="submit" Disabled="DisableAddToCart">Add To Cart</MatButton>
+</form>
+@code {
+
+}

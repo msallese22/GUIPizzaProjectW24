@@ -1,0 +1,12 @@
+﻿.move-pizzas {
+    display: flex;
+    flex-direction: column;
+}
+
+.manual-length {
+    width: 20%;
+}
+h6 {
+    margin-top: 10px;
+    font-family: "Comic Sans MS";
+}

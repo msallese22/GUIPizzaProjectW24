@@ -1,0 +1,24 @@
+﻿@implements IDisposable
+<h3>Soups</h3>
+
+<form @onsubmit="Form">
+
+    <MatSelectItem @bind-Value="@Stews" Items="@Stew" Label="Pick a Hot Soup"></MatSelectItem>
+<p>Try our Soup of the Day! Only $3.49! We guarantee freshness!</p>
+    <MatButton Raised="true" Type="submit" Disabled="DisableAddToCart()">Add To Cart</MatButton>
+
+</form>
+@code {
+    protected override void OnInitialized()
+    {
+        DailySoups();
+        PrintSoups();
+
+    }
+    public void Dispose()
+    {
+        Stew = new List<String>();
+    }
+
+
+}

@@ -1,0 +1,48 @@
+﻿<h3>Drinks</h3>
+<form @onsubmit="Form" class="flex">
+    <div class="move-drinks">
+        <div class="manual-length">
+            <MatSelect Label="Pick Refreshing Drink" @bind-Value="Drink">
+                <MatOptionString Value="@Models.Drinks.Thunder">Dr. Thunder</MatOptionString>
+                <MatOptionString Value="@Models.Drinks.Dew">7 Dew</MatOptionString>
+                <MatOptionString Value="@Models.Drinks.MrPibb">Mr. Pibb</MatOptionString>
+                <MatOptionString Value="@Models.Drinks.MtnLightning">Mountain Lightning</MatOptionString>
+                <MatOptionString Value="@Models.Drinks.Dynamite">Dr. Dynamite</MatOptionString>
+                <MatOptionString Value="@Models.Drinks.LemonLime">Lemon Lime</MatOptionString>
+            </MatSelect>
+        </div>
+        <div>
+            <h6>Please select a size...</h6>
+            <MatRadioGroup @bind-Value="@DrinkSize" TValue="string">
+                <MatRadioButton Value="@(@Models.Drinks.SmallD)" TValue="string">
+                    @Models.Drinks.SmallD $@Models.Drinks.SmPriceD
+                </MatRadioButton>
+                <MatRadioButton Value="@(Models.Drinks.MediumD)" TValue="string">
+                    @Models.Drinks.MediumD $@Models.Drinks.MdPriceD
+                </MatRadioButton>
+                <MatRadioButton Value="@(Models.Drinks.LargeD)" TValue="string">
+                    @Models.Drinks.LargeD $@Models.Drinks.LgPriceD
+                </MatRadioButton>
+            </MatRadioGroup>
+        </div>
+        <div>
+            <h6>Please select your ice level...</h6>
+            <MatRadioGroup @bind-Value="@Ice" TValue="string">
+                <MatRadioButton Value="@(Models.Drinks.RegIce)" TValue="string">
+                    @Models.Drinks.RegIce
+                </MatRadioButton>
+                <MatRadioButton Value="@(Models.Drinks.ExtraIce)" TValue="string">
+                    @Models.Drinks.ExtraIce
+                </MatRadioButton>
+                <MatRadioButton Value="@(Models.Drinks.NoIce)" TValue="string">
+                    @Models.Drinks.NoIce
+                </MatRadioButton>
+            </MatRadioGroup>
+        </div>
+        <div class="button-length"> <MatButton Raised="true" Type="submit" Disabled="DisableAddToCart()">Add To Cart</MatButton></div>
+    </div>
+</form>
+
+@code {
+
+}

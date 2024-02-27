@@ -1,0 +1,45 @@
+﻿<h3>Pizzas</h3>
+<form @onsubmit="Form">
+    <!== whenever this form is submitted, it will fire the guess method.==>
+    <div class="move-pizzas">
+        <div class="manual-length">
+            <MatSelect Label="Pick a Pizza Size" @bind-Value="PizzaSize">
+
+                <MatOptionString Value="@Models.Pizzas.Small">
+                    Small $@Models.Pizzas.SmPrice Toppings: $@Models.Pizzas.SmToppings.ToString("0.00")
+                </MatOptionString>
+                <MatOptionString Value="@Models.Pizzas.Medium">
+                    Medium $@Models.Pizzas.MdPrice Toppings: $@Models.Pizzas.MdToppings.ToString("0.00")
+                </MatOptionString>
+                <MatOptionString Value="@Models.Pizzas.Large">
+                    Large $@Models.Pizzas.LgPrice Toppings: $@Models.Pizzas.LgToppings.ToString("0.00")
+                </MatOptionString>
+                <MatOptionString Value="@Models.Pizzas.XLarge">
+                    Extra Large $@Models.Pizzas.XlgPrice Toppings: $@Models.Pizzas.XlgToppings.ToString("0.00")
+                </MatOptionString>
+            </MatSelect>
+        </div>
+        <div>
+            <h6>Small: 10 inches, Medium: 12 inches, Large: 14 inches, Extra-Large: 16 inches</h6>
+            <h6>If you'd like to add a topping, please click a box. If you prefer plain cheese, then don't click a box.</h6>
+            <MatCheckbox @bind-Value="@Pepperoni" Label="Pepperoni"></MatCheckbox>
+            <MatCheckbox @bind-Value="@Sausage" Label="Sausage"></MatCheckbox>
+            <MatCheckbox @bind-Value="@Bacon" Label="Bacon"></MatCheckbox>
+            <MatCheckbox @bind-Value="@Peppers" Label="Peppers"></MatCheckbox>
+            <MatCheckbox @bind-Value="@Pineapple" Label="Pineapple"></MatCheckbox>
+            <MatCheckbox @bind-Value="@Mushrooms" Label="Mushrooms"></MatCheckbox>
+            
+        </div>
+    </div>
+    <p>Total Price: $@(TotalPrice.ToString("0.00"))</p>
+    <MatButton Raised="true" Type="button" Disabled="DisableCalcPrice()" @onclick="CalcPrice">
+        Calculate Pizza Total
+    </MatButton>
+
+    <MatButton Raised="true" Type="submit" Disabled="DisableAddToCart">Add To Cart</MatButton>
+</form>
+
+@code {
+
+
+}
