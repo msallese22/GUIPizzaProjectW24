@@ -12,8 +12,6 @@
         public static double CookieBrowniePrice = 6.49;
         public static double ChocolateChipCookiePrice = 2.49;
 
-
-
         public Desserts(String Flavor)
         {
             this.Flavor = Flavor;
